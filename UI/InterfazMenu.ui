@@ -30,7 +30,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -159,8 +159,8 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>0</y>
+        <x>420</x>
+        <y>-10</y>
         <width>331</width>
         <height>101</height>
        </rect>
@@ -173,7 +173,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Programa 2</string>
+       <string>Programa 1</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -210,385 +210,13 @@
        <string>1. Digite los vectores de las bases bases B y  B'</string>
       </property>
      </widget>
-     <widget class="QLabel" name="nombreCantidadCarreteras_3">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>370</y>
-        <width>401</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>3. Introduzca los parámetros para las condiciones:</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="gridLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>410</y>
-        <width>621</width>
-        <height>163</height>
-       </rect>
-      </property>
-      <layout class="QGridLayout" name="gridLayoutVariables">
-       <item row="1" column="0" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Variables</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="4">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxTC2">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="labelComparacion">
-         <property name="text">
-          <string>Comparación</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="comboBoxL">
-         <item>
-          <property name="text">
-           <string>L &gt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>L &gt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>L &lt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>L &lt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; L &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; L &lt;= C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= L &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= L &lt;= C2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QComboBox" name="comboBoxT">
-         <item>
-          <property name="text">
-           <string>T &gt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>T &gt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>T &lt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>T &lt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; T &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; T &lt;= C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= T &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= T &lt;= C2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="1" column="2" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="labelCondicion">
-         <property name="text">
-          <string>Condición 1</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxPC1">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_14">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Tiempo Total</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxTC1">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="comboBoxCos">
-         <item>
-          <property name="text">
-           <string>Cos &gt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cos &gt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cos &lt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cos &lt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; Cos &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; Cos &lt;= C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= Cos &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= Cos &lt;= C2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QComboBox" name="comboBoxP">
-         <item>
-          <property name="text">
-           <string>P &gt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>P &gt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>P &lt; C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>P &lt;= C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; P &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt; P &lt;= C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= P &lt; C2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C1 &lt;= P &lt;= C2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="4">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxPC2">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="4">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxLC2">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxCosC1">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_15">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Costo Total</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_13">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Longitud Total</string>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="4">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxCosC2">
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_16">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Poblacion Beneficiada</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QDoubleSpinBox" name="doubleSpinBoxLC1">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>9999.998999999999796</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="labelLCondicion2">
-         <property name="text">
-          <string>Condición 2</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
        <rect>
-        <x>690</x>
-        <y>470</y>
-        <width>311</width>
-        <height>101</height>
+        <x>680</x>
+        <y>90</y>
+        <width>321</width>
+        <height>281</height>
        </rect>
       </property>
       <property name="widgetResizable">
@@ -599,14 +227,14 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>309</width>
-         <height>99</height>
+         <width>319</width>
+         <height>279</height>
         </rect>
        </property>
        <widget class="QLabel" name="nombreCantidadCarreteras_4">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>10</x>
           <y>10</y>
           <width>301</width>
           <height>31</height>
@@ -618,29 +246,10 @@
          </font>
         </property>
         <property name="text">
-         <string>4. Resultados</string>
+         <string>Matrices de Transición B y B'</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="labelResultados">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>291</width>
-          <height>321</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
         </property>
        </widget>
       </widget>
@@ -648,8 +257,8 @@
      <widget class="QTableWidget" name="tableWidgetRutas">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>140</y>
+        <x>170</x>
+        <y>130</y>
         <width>431</width>
         <height>111</height>
        </rect>
@@ -669,22 +278,162 @@
       </row>
       <column>
        <property name="text">
-        <string>a</string>
+        <string>Elemento a</string>
        </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>b</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>c</string>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
        </property>
        <property name="textAlignment">
-        <set>AlignLeading|AlignVCenter</set>
+        <set>AlignCenter</set>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>Elemento b</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Elemento c</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="nombreCantidadCarreteras_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>260</y>
+        <width>371</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>2. Digite un vector u de R3</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidgetRutas_2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>300</y>
+        <width>431</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <row>
+       <property name="text">
+        <string>u</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Elemento a</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Elemento b</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Elemento c</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>390</y>
+        <width>971</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>969</width>
+         <height>189</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="nombreCantidadCarreteras_6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>301</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>u como Combinacion Lineal de B y B'</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="TapP2">
@@ -694,8 +443,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>0</y>
+        <x>420</x>
+        <y>-10</y>
         <width>351</width>
         <height>101</height>
        </rect>
@@ -708,121 +457,156 @@
        </font>
       </property>
       <property name="text">
-       <string>Programa 3</string>
+       <string>Programa 2</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBoxOrden">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
+     <widget class="QTableWidget" name="tableWidgetRutas_3">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>90</y>
-        <width>51</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>8</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="nombreOrdenEstructura">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>90</y>
-        <width>351</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>1. Digite el orden de la estructura (1-8):</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="nombreDatosEstructura">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>140</y>
-        <width>561</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>2. Introduzca los datos para la estructura y presione &quot;Evalúar Estructura&quot;:</string>
-      </property>
-     </widget>
-     <widget class="QTableWidget" name="tableWidgetDatosEstructura">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
+        <x>180</x>
         <y>170</y>
-        <width>631</width>
-        <height>192</height>
+        <width>321</width>
+        <height>71</height>
        </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
       </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
       </property>
       <row>
        <property name="text">
-        <string>a</string>
+        <string>B de R2</string>
        </property>
       </row>
       <column>
        <property name="text">
-        <string>a</string>
+        <string>Elemento a</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
        </property>
       </column>
-      <item row="0" column="0">
+      <column>
        <property name="text">
-        <string/>
+        <string>Elemento b</string>
        </property>
-      </item>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
      </widget>
-     <widget class="QPushButton" name="pushButtonEvaluarEstructura">
+     <widget class="QLabel" name="nombreCantidadCarreteras_3">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>380</y>
-        <width>131</width>
-        <height>23</height>
+        <x>60</x>
+        <y>100</y>
+        <width>371</width>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Evalúar Estructura</string>
+       <string>1.Ingrese la base de R2</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidgetRutas_4">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>390</y>
+        <width>471</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <row>
+       <property name="text">
+        <string>Base de R3</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Elemento a</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Elemento b</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Elemento c</string>
+       </property>
+       <property name="font">
+        <font>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="nombreCantidadCarreteras_5">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>340</y>
+        <width>371</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>2.Ingrese la base de R3</string>
       </property>
      </widget>
      <widget class="QScrollArea" name="scrollArea_2">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>420</y>
-        <width>631</width>
-        <height>201</height>
+        <x>680</x>
+        <y>60</y>
+        <width>321</width>
+        <height>281</height>
        </rect>
       </property>
       <property name="widgetResizable">
@@ -833,16 +617,16 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>629</width>
-         <height>199</height>
+         <width>319</width>
+         <height>279</height>
         </rect>
        </property>
-       <widget class="QLabel" name="nombreCantidadCarreteras_5">
+       <widget class="QLabel" name="nombreCantidadCarreteras_7">
         <property name="geometry">
          <rect>
-          <x>260</x>
+          <x>10</x>
           <y>10</y>
-          <width>111</width>
+          <width>301</width>
           <height>31</height>
          </rect>
         </property>
@@ -852,29 +636,54 @@
          </font>
         </property>
         <property name="text">
-         <string>4. Resultados</string>
+         <string>Base Ortonormal de R2</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="labelResultadosPrograma3">
+      </widget>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea_4">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>350</y>
+        <width>321</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>319</width>
+         <height>279</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="nombreCantidadCarreteras_8">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>50</y>
-          <width>601</width>
-          <height>121</height>
+          <y>10</y>
+          <width>301</width>
+          <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string/>
+         <string>Base Ortonormal de R3</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
         </property>
        </widget>
       </widget>
