@@ -30,7 +30,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -179,25 +179,12 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="buttonCalcularCarretera">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>600</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Calcular</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="nombreCantidadCarreteras">
       <property name="geometry">
        <rect>
         <x>40</x>
         <y>90</y>
-        <width>371</width>
+        <width>551</width>
         <height>31</height>
        </rect>
       </property>
@@ -207,7 +194,7 @@
        </font>
       </property>
       <property name="text">
-       <string>1. Digite los vectores de las bases bases B y  B'</string>
+       <string>1. Digite los vectores de las bases bases B y  B'  Ej: (a,b,c)</string>
       </property>
      </widget>
      <widget class="QScrollArea" name="scrollArea">
@@ -278,7 +265,7 @@
       </row>
       <column>
        <property name="text">
-        <string>Elemento a</string>
+        <string>Vector a</string>
        </property>
        <property name="font">
         <font>
@@ -291,7 +278,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Elemento b</string>
+        <string>Vector b</string>
        </property>
        <property name="font">
         <font>
@@ -304,7 +291,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Elemento c</string>
+        <string>Vector c</string>
        </property>
        <property name="font">
         <font>
@@ -417,7 +404,7 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>301</width>
+          <width>411</width>
           <height>31</height>
          </rect>
         </property>
@@ -427,7 +414,7 @@
          </font>
         </property>
         <property name="text">
-         <string>u como Combinacion Lineal de B y B'</string>
+         <string>Vector u como Combinacion Lineal de B y B'</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -468,7 +455,7 @@
        <rect>
         <x>180</x>
         <y>170</y>
-        <width>321</width>
+        <width>341</width>
         <height>71</height>
        </rect>
       </property>
@@ -477,12 +464,12 @@
       </property>
       <row>
        <property name="text">
-        <string>B de R2</string>
+        <string>Base de R2</string>
        </property>
       </row>
       <column>
        <property name="text">
-        <string>Elemento a</string>
+        <string>Vector a</string>
        </property>
        <property name="font">
         <font>
@@ -495,7 +482,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Elemento b</string>
+        <string>Vector b</string>
        </property>
        <property name="font">
         <font>
@@ -544,7 +531,7 @@
       </row>
       <column>
        <property name="text">
-        <string>Elemento a</string>
+        <string>Vector a</string>
        </property>
        <property name="font">
         <font>
@@ -557,7 +544,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Elemento b</string>
+        <string>Vector b</string>
        </property>
        <property name="font">
         <font>
@@ -570,7 +557,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Elemento c</string>
+        <string>Vector c</string>
        </property>
        <property name="font">
         <font>
