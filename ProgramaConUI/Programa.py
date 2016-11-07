@@ -36,6 +36,10 @@ class Principal(QtGui.QMainWindow, form_class):
     vectorB2R3 = self.tableWidgetBasesP1.item(1,1).text()
     vectorB3R3 = self.tableWidgetBasesP1.item(1,2).text()
     
+    E1U = self.tableWidgetVectorP1.item(0,0).text()
+    E2U = self.tableWidgetVectorP1.item(0,1).text()
+    E3U = self.tableWidgetVectorP1.item(0,2).text()
+    
     vA1 = vectorA1R3.split(",")
     vA2 = vectorA2R3.split(",")
     vA3 = vectorA3R3.split(",")
@@ -44,11 +48,17 @@ class Principal(QtGui.QMainWindow, form_class):
     vB2 = vectorB2R3.split(",")
     vB3 = vectorB3R3.split(",")
     
+    vU1 = E1U.split(",")
+    vU2 = E2U.split(",")
+    vU3 = E3U.split(",")    
+    
     baseATemp = np.array([vA1, vA2, vA3])
     baseBTemp = np.array([vB1, vB2, vB3])
+    vectorU = np.array([vU1, vU2, vU3])
     
     baseA = baseATemp.astype(np.float)
     baseB = baseBTemp.astype(np.float)
+    U = vectorU.astype(np.float)
    
     try:
         if (esBaseR3(baseA) and esBaseR3(baseB)):
@@ -59,6 +69,9 @@ class Principal(QtGui.QMainWindow, form_class):
             print(mTransicionB)
             self.labelTransisiones.setText(respuestaTransP1(mTransicionA))
             self.labelTransisiones2.setText(respuestaTransP1(mTransicionB))
+            
+            combinacionLineal(mTransicionA, mTransicionB, U)
+            
             
         else:
             self.labelTransisiones.setText("No son Base, hay dependencia :(")
@@ -172,18 +185,10 @@ def esBaseR3(v):
 ##"""""""""""""""""""""""Para Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
 def transicion(A, B):
-#    #A = np.array([[-1,0,-1], [-4,8,2], [1,-3,-1]])
-#    #B = np.array([[0,1,-1], [-1,1,0], [6,-4,-1]])
-#    B = np.array([[1,0,0], [0,1,0], [0,0,1]])
-#    A = np.array([[1,1,1], [1,1,0], [1,0,0]])
 
     BT = B.T
-    BInversa = np.linalg.inv(BT)
-    #print(BInversa)
-    
+    BInversa = np.linalg.inv(BT)   
     AT = A.T 
-    #print(AT)
-
     resultado = BInversa.dot(AT)
     return resultado
     
@@ -195,6 +200,10 @@ def respuestaTransP1(A):
 
     return respuesta
 
+def combinacionLineal(MTA, MTB, U):
+    print(mTransicionA.dot(U))
+    print(mTransicionB.dot(U))
+    
 ##"""""""""""""""""""""""FIN Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
 
