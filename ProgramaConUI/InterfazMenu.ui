@@ -279,10 +279,10 @@
      <widget class="QTableWidget" name="tableWidgetBasesP1">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>130</y>
-        <width>431</width>
-        <height>111</height>
+        <x>220</x>
+        <y>140</y>
+        <width>331</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="alternatingRowColors">
@@ -359,10 +359,10 @@
      <widget class="QTableWidget" name="tableWidgetVectorP1">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>220</x>
         <y>300</y>
-        <width>431</width>
-        <height>71</height>
+        <width>321</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="alternatingRowColors">
