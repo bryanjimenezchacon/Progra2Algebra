@@ -30,7 +30,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -194,7 +194,7 @@
        </font>
       </property>
       <property name="text">
-       <string>1. Digite los vectores de las bases bases B y  B'  Ej: (a,b,c)</string>
+       <string>1. Digite los vectores de las bases B y  B'  Ej: (a,b,c)</string>
       </property>
      </widget>
      <widget class="QScrollArea" name="scrollArea">
@@ -241,7 +241,7 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QTableWidget" name="tableWidgetRutas">
+     <widget class="QTableWidget" name="tableWidgetBasesP1">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -321,7 +321,7 @@
        <string>2. Digite un vector u de R3</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidgetRutas_2">
+     <widget class="QTableWidget" name="tableWidgetVectorP1">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -450,7 +450,7 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidgetRutas_3">
+     <widget class="QTableWidget" name="tableWidgetBaseR2P2">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -512,7 +512,7 @@
        <string>1.Ingrese la base de R2</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidgetRutas_4">
+     <widget class="QTableWidget" name="tableWidgetBaseR3P2">
       <property name="geometry">
        <rect>
         <x>120</x>
