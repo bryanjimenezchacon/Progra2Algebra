@@ -20,14 +20,29 @@ class Principal(QtGui.QMainWindow, form_class):
   self.setupUi(self)
 ##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  
   #Para Programa 1
-  
-  
+  self.pushButtonCalcularTrans.clicked.connect(self.calcTransicion)
   
 ##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  
   #Para Programa 2
   self.pushButtonCalcularR2P2.clicked.connect(self.calcOrtonormalR2)
   self.pushButtonCalcularR3P2.clicked.connect(self.calcOrtonormalR3)
+  
+ def calcTransicion(self):#Paraq programa 1
+ 
+    #A = np.array([[-1,0,-1], [-4,8,2], [1,-3,-1]])
+    #B = np.array([[0,1,-1], [-1,1,0], [6,-4,-1]])
+    B = np.array([[1,0,0], [0,1,0], [0,0,1]])
+    A = np.array([[1,1,1], [1,1,0], [1,0,0]])
 
+    BT = B.T
+    BInversa = np.linalg.inv(BT)
+    print(BInversa)
+    
+    AT = A.T 
+    print(AT)
+
+    print(BInversa.dot(AT))
+     
  def calcOrtonormalR2(self):#Para el programa 2
  #Obtiene los vectores
   vector1R2 = self.tableWidgetBaseR2P2.item(0,0).text()
@@ -133,7 +148,6 @@ def esBaseR3(v):
 
 ##"""""""""""""""""""""""Para Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
-
 
 
 

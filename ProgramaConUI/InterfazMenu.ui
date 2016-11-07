@@ -492,6 +492,19 @@
        </widget>
       </widget>
      </widget>
+     <widget class="QPushButton" name="pushButtonCalcularTrans">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>240</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calcular</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="TapP2">
      <attribute name="title">
