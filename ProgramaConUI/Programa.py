@@ -41,6 +41,7 @@ class Principal(QtGui.QMainWindow, form_class):
       print("soy base")
       vectoresFloatR2 = vectores.astype(np.float)
       print(gs(vectoresFloatR2))
+      self.labelR2Ortonormal.setText(respuestaP2(gs(vectoresFloatR2)))
   else:
       self.labelR2Ortonormal.setText("No es Base, hay dependencia :(")
       print("Nope, no base here")
@@ -61,7 +62,8 @@ class Principal(QtGui.QMainWindow, form_class):
       if (esBaseR3(vectores)):
           print("soy base")
           vectoresFloatR3 = vectores.astype(np.float)
-          gs(vectoresFloatR3)
+          print(gs(vectoresFloatR3))
+          self.labelR3Ortonormal.setText(respuestaP2(gs(vectoresFloatR3)))
       else:
           self.labelR3Ortonormal.setText("No es Base, hay dependencia :(")
           print("Nope, no base here")
@@ -130,109 +132,44 @@ def esBaseR3(v):
     
 
 #-------------------------------------------------------------------------------
-def proj(normVector, constVector):
-    Vn = array(normVector)
-    Vc = array(constVector)
+def aux(V1, V2):
+    Vn = array(V1)
+    Vc = array(V2)
     return ((sum(Vc*Vn)/sum(Vn**2))*Vn)
 
 #-------------------------------------------------------------------------------
-def gs(vL):
-    Out = []
-    print(vL)
-    for i in range(len(vL)):
-        nowVec = array(vL[i])
+def gs(vectores):
+    resGS = []
+    print(vectores)
+    for i in range(len(vectores)):
+        vectActual = array(vectores[i])
+        for v in resGS :
+            vectActual -= aux(v, vectActual)
+        vectActual /= sqrt(sum(vectActual*vectActual))
 
-        for v in Out :
-            nowVec -= proj(v, nowVec)
-        nowVec /= sqrt(sum(nowVec*nowVec))
-
-        Out.append(nowVec)
-    return Out
+        resGS.append(vectActual)
+    return resGS
 #-------------------------------------------------------------------------------
+def respuestaP2(sol):
+    respuesta = "{ "
+    for i in range(len(sol)):
+        respuesta += "("
+        for j in range(len(sol[i])):
+            respuesta += str(sol[i][j])
+            if (j != (len(sol[i])-1)):
+                respuesta += ", "
+            print(sol[i][j])
+        if(i != (len(sol)-1)):
+            respuesta += "), "
+        else:
+            respuesta += ") "
+    respuesta += " }"
+    
+    return respuesta
+    
+    
 
-## http://www.scs.ryerson.ca/~danziger/mth141/Handouts/gram.pdf
-#test_0 = array([[0., 1.], [1., 1.]])
-## http://www.personal.psu.edu/tam44/Math2025/Lecture7.pdf
-#test_1 = array([[1., 1.], [2., -1.]])
-#
-#test0 = array([[1., 1., 0.], [1., 3., 1.], [2.,-1., 1.]])
-## http://www.personal.psu.edu/tam44/Math2025/Lecture7.pdf
-#test1 = array([[0., 1., 2.], [1., 1., 2.], [1., 0., 1.]])
-## http://www.math.ucla.edu/~yanovsky/Teaching/Math151B/handouts/GramSchmidt.pdf
-#test2 = array([[1., 1., 0.], [1., 0., 1.], [0., 1., 1.]])
-## http://www.scs.ryerson.ca/~danziger/mth141/Handouts/gram.pdf
-#test3 = array([[1., 2., 1.],[1., 1., 3.],[2., 1., 1.]])
-## https://www.math.hmc.edu/calculus/tutorials/gramschmidt/gramschmidt.pdf
-#test4 = array([[1., -1., 1.],[1., 0., 1.],[1., 1., 2.]])
-## http://perso.ens-lyon.fr/marco.mazzucchelli/teaching/2011/math220/notes/sec6_4.pdf
-#test5 = array([[1., 1., 0.], [2., 2., 3.]])
-#
-test6 = array([[1., -1., 1.],[-2., 3., -1.],[1., 2., -4.]])
-#print()
-#
-#print ("----------------------------------------------------------------------")
-#print (gs(test_0))
-#print ("----------------------------------------------------------------------")
-#print (gs(test_1))
-#print ("----------------------------------------------------------------------")
-#print (gs(test0))
-#print ("----------------------------------------------------------------------")
-#print (gs(test1))
-#print ("----------------------------------------------------------------------")
-#print (gs(test2))
-#print ("----------------------------------------------------------------------")
-#print (gs(test3))
-#print ("----------------------------------------------------------------------")
-#print (gs(test4))
-#print ("----------------------------------------------------------------------")
-#print (gs(test5))
-#print ("----------------------------------------------------------------------")
-#print ("----------------------------------------------------------------------")
-print (gs(test6))
-#b = array([[5], [6]])
-#A = array([[1, 2], [3, 4]])
-#print(linalg.inv(A).dot(b))
-
-
-#test_0 = np.array([[3, 1], [-2, 4]])
-#esBaseR2(test_0)
-
-
-#test_1 = np.array([[1, 1, 0], [0,2,3], [1, 2,3]])
-#test_2 = np.array([[1,1,3], [3,5,5], [2,1,8]])
-#test_3 = np.array([[2,3,1], [1,0,1], [0,3,-1]])
-#test_4 = np.array([[1,-2,3], [2,-2,0], [0,1,7]])
-#
-#
-#test_5 = np.array([[2,0,0], [0,1,0], [0,0,1]])
-#test_6 = np.array([[1,1,1], [1,1,0], [1,0,0]])
-#test_7 = np.array([[504,0,0], [0,7,0], [0,0,1.5]])
-#
-#test_8 = np.array([[-1,0,2], [0,-4,2], [2,0,-4]])
-#
-#esBaseR3(test_1)
-#esBaseR3(test_2)
-#esBaseR3(test_3)
-#esBaseR3(test_4)
-#
-#esBaseR3(test_5)
-#esBaseR3(test_6)
-#esBaseR3(test_7)
-#
-#esBaseR3(test_8)
-#
-##Se define los valores de la matriz A
-#A = array([[1,2,3],[1,2,3],[1,2,3]])
-#
-##Se definen los valores de la matriz B
-#B = array([[0],[0],[0]])
-#
-##Se calcula el valor de X con X=inv(A)*B
-#X = linalg.inv(A).dot(B)
-##Se muestra el resultado
-#print("El resultado de X es:",X)
-
-
+#-------------------------------------------------------------------------------
 ## MAIN ##
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
