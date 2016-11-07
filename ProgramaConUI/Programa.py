@@ -1,9 +1,38 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+
 import numpy as np
 from scipy import *
 from sympy import *
+import sys
+from PyQt4 import QtCore, QtGui, uic
+from itertools import *
+import copy
+
+#import InterfazMenu
+# Cargar nuestro archivo .ui
+form_class = uic.loadUiType("InterfazMenu.ui")[0]
+
+class Principal(QtGui.QMainWindow, form_class):
+ def __init__(self, parent=None):
+  QtGui.QMainWindow.__init__(self, parent)
+  self.setupUi(self)
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 def esBaseR2(v):
     x = Symbol('x')
@@ -154,3 +183,11 @@ esBaseR3(test_8)
 #X = linalg.inv(A).dot(B)
 ##Se muestra el resultado
 #print("El resultado de X es:",X)
+
+
+## MAIN ##
+if __name__ == "__main__":
+    app = QtGui.QApplication(sys.argv)
+    MyWindow = Principal(None)
+    MyWindow.show()
+    app.exec_()
