@@ -28,20 +28,43 @@ class Principal(QtGui.QMainWindow, form_class):
   self.pushButtonCalcularR3P2.clicked.connect(self.calcOrtonormalR3)
   
  def calcTransicion(self):#Paraq programa 1
- 
-    #A = np.array([[-1,0,-1], [-4,8,2], [1,-3,-1]])
-    #B = np.array([[0,1,-1], [-1,1,0], [6,-4,-1]])
-    B = np.array([[1,0,0], [0,1,0], [0,0,1]])
-    A = np.array([[1,1,1], [1,1,0], [1,0,0]])
-
-    BT = B.T
-    BInversa = np.linalg.inv(BT)
-    print(BInversa)
+    vectorA1R3 = self.tableWidgetBasesP1.item(0,0).text()
+    vectorA2R3 = self.tableWidgetBasesP1.item(0,1).text()
+    vectorA3R3 = self.tableWidgetBasesP1.item(0,2).text()
+   
+    vectorB1R3 = self.tableWidgetBasesP1.item(1,0).text()
+    vectorB2R3 = self.tableWidgetBasesP1.item(1,1).text()
+    vectorB3R3 = self.tableWidgetBasesP1.item(1,2).text()
     
-    AT = A.T 
-    print(AT)
-
-    print(BInversa.dot(AT))
+    vA1 = vectorA1R3.split(",")
+    vA2 = vectorA2R3.split(",")
+    vA3 = vectorA3R3.split(",")
+    
+    vB1 = vectorB1R3.split(",")
+    vB2 = vectorB2R3.split(",")
+    vB3 = vectorB3R3.split(",")
+    
+    baseATemp = np.array([vA1, vA2, vA3])
+    baseBTemp = np.array([vB1, vB2, vB3])
+    
+    baseA = baseATemp.astype(np.float)
+    baseB = baseBTemp.astype(np.float)
+   
+    try:
+        if (esBaseR3(baseA) and esBaseR3(baseB)):
+            print("soy base")
+            mTransicionA = transicion(baseA, baseB)
+            mTransicionB = transicion(baseB, baseA)
+            print(mTransicionA)
+            print(mTransicionB)
+            self.labelTransisiones.setText(respuestaTransP1(mTransicionA))
+            self.labelTransisiones2.setText(respuestaTransP1(mTransicionB))
+            
+        else:
+            self.labelTransisiones.setText("No son Base, hay dependencia :(")
+            print("Nope, no base here")
+    except:
+        self.labelTransisiones.setText("Los valores deben ser numéricos :/") 
      
  def calcOrtonormalR2(self):#Para el programa 2
  #Obtiene los vectores
@@ -148,8 +171,29 @@ def esBaseR3(v):
 
 ##"""""""""""""""""""""""Para Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
+def transicion(A, B):
+#    #A = np.array([[-1,0,-1], [-4,8,2], [1,-3,-1]])
+#    #B = np.array([[0,1,-1], [-1,1,0], [6,-4,-1]])
+#    B = np.array([[1,0,0], [0,1,0], [0,0,1]])
+#    A = np.array([[1,1,1], [1,1,0], [1,0,0]])
 
+    BT = B.T
+    BInversa = np.linalg.inv(BT)
+    #print(BInversa)
+    
+    AT = A.T 
+    #print(AT)
 
+    resultado = BInversa.dot(AT)
+    return resultado
+    
+def respuestaTransP1(A):
+    respuesta = ""
+    for i in range(len(A)):
+        respuesta += str(A[i])
+        respuesta += "\n"
+
+    return respuesta
 
 ##"""""""""""""""""""""""FIN Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
