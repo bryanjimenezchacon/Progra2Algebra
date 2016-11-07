@@ -18,9 +18,12 @@ class Principal(QtGui.QMainWindow, form_class):
  def __init__(self, parent=None):
   QtGui.QMainWindow.__init__(self, parent)
   self.setupUi(self)
-  
+##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  
   #Para Programa 1
   
+  
+  
+##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""  
   #Para Programa 2
   self.pushButtonCalcularR2P2.clicked.connect(self.calcOrtonormalR2)
   self.pushButtonCalcularR3P2.clicked.connect(self.calcOrtonormalR3)
@@ -33,11 +36,16 @@ class Principal(QtGui.QMainWindow, form_class):
   v1 = vector1R2.split(",")
   v2 = vector2R2.split(",")
   vectores = np.array([v1, v2])
-  
+  #try:
   if (esBaseR2(vectores)):
       print("soy base")
+      vectoresFloatR2 = vectores.astype(np.float)
+      print(gs(vectoresFloatR2))
   else:
+      self.labelR2Ortonormal.setText("No es Base, hay dependencia :(")
       print("Nope, no base here")
+  #except:
+   #   self.labelR2Ortonormal.setText("Los valores deben ser numéricos :/")  
 
  def calcOrtonormalR3(self):#Para el programa 2
  #Obtiene los vectores
@@ -49,13 +57,18 @@ class Principal(QtGui.QMainWindow, form_class):
   v2 = vector2R3.split(",")
   v3 = vector3R3.split(",")
   vectores = np.array([v1, v2, v3])
-  
-  if (esBaseR3(vectores)):
-      print("soy base")
-  else:
-      print("Nope, no base here")
+  try:
+      if (esBaseR3(vectores)):
+          print("soy base")
+          vectoresFloatR3 = vectores.astype(np.float)
+          gs(vectoresFloatR3)
+      else:
+          self.labelR3Ortonormal.setText("No es Base, hay dependencia :(")
+          print("Nope, no base here")
+  except:
+      self.labelR3Ortonormal.setText("Los valores deben ser numéricos :/")
 
-
+##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 def esBaseR2(v):
@@ -67,6 +80,7 @@ def esBaseR2(v):
     e2v1 = v[0][1]
     e1v2 = v[1][0]
     e2v2 = v[1][1]
+    
     
     sistema = solve([float(e1v1)*x +float(e1v2)*y,float(e2v1)*x + float(e2v2)*y], [x, y])
     print(sistema)
@@ -122,8 +136,9 @@ def proj(normVector, constVector):
     return ((sum(Vc*Vn)/sum(Vn**2))*Vn)
 
 #-------------------------------------------------------------------------------
-def gsn(vL):
+def gs(vL):
     Out = []
+    print(vL)
     for i in range(len(vL)):
         nowVec = array(vL[i])
 
@@ -152,28 +167,28 @@ def gsn(vL):
 ## http://perso.ens-lyon.fr/marco.mazzucchelli/teaching/2011/math220/notes/sec6_4.pdf
 #test5 = array([[1., 1., 0.], [2., 2., 3.]])
 #
-#test6 = array([[1., -1., 1.],[-2., 3., -1.],[1., 2., -4.]])
+test6 = array([[1., -1., 1.],[-2., 3., -1.],[1., 2., -4.]])
 #print()
 #
 #print ("----------------------------------------------------------------------")
-#print (gsn(test_0))
+#print (gs(test_0))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test_1))
+#print (gs(test_1))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test0))
+#print (gs(test0))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test1))
+#print (gs(test1))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test2))
+#print (gs(test2))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test3))
+#print (gs(test3))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test4))
+#print (gs(test4))
 #print ("----------------------------------------------------------------------")
-#print (gsn(test5))
+#print (gs(test5))
 #print ("----------------------------------------------------------------------")
 #print ("----------------------------------------------------------------------")
-#print (gsn(test6))
+print (gs(test6))
 #b = array([[5], [6]])
 #A = array([[1, 2], [3, 4]])
 #print(linalg.inv(A).dot(b))

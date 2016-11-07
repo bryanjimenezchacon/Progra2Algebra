@@ -642,6 +642,19 @@
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
+       <widget class="QLabel" name="labelR2Ortonormal">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>281</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QScrollArea" name="scrollArea_4">
@@ -684,6 +697,19 @@
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelR3Ortonormal">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>281</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </widget>
