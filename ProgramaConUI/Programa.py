@@ -19,36 +19,69 @@ class Principal(QtGui.QMainWindow, form_class):
   QtGui.QMainWindow.__init__(self, parent)
   self.setupUi(self)
   
-
+  #Para Programa 1
   
+  #Para Programa 2
+  self.pushButtonCalcularR2P2.clicked.connect(self.calcOrtonormalR2)
+  self.pushButtonCalcularR3P2.clicked.connect(self.calcOrtonormalR3)
+
+ def calcOrtonormalR2(self):#Para el programa 2
+ #Obtiene los vectores
+  vector1R2 = self.tableWidgetBaseR2P2.item(0,0).text()
+  vector2R2 = self.tableWidgetBaseR2P2.item(0,1).text()
+  
+  v1 = vector1R2.split(",")
+  v2 = vector2R2.split(",")
+  vectores = np.array([v1, v2])
+  
+  if (esBaseR2(vectores)):
+      print("soy base")
+  else:
+      print("Nope, no base here")
+
+ def calcOrtonormalR3(self):#Para el programa 2
+ #Obtiene los vectores
+  vector1R3 = self.tableWidgetBaseR3P2.item(0,0).text()
+  vector2R3 = self.tableWidgetBaseR3P2.item(0,1).text()
+  vector3R3 = self.tableWidgetBaseR3P2.item(0,2).text()
+  
+  v1 = vector1R3.split(",")
+  v2 = vector2R3.split(",")
+  v3 = vector3R3.split(",")
+  vectores = np.array([v1, v2, v3])
+  
+  if (esBaseR3(vectores)):
+      print("soy base")
+  else:
+      print("Nope, no base here")
 
 
-
-
-
-
-
-
-
-
-
-
+##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 def esBaseR2(v):
+    print(v)
     x = Symbol('x')
     y = Symbol('y')
     
     e1v1 = v[0][0]
-    e2v1 = v[0][1]    
+    e2v1 = v[0][1]
     e1v2 = v[1][0]
     e2v2 = v[1][1]
     
-    print(v)
-    sistema = np.array([[e1v1, e1v2], [e2v1, e2v2]])
+    sistema = solve([float(e1v1)*x +float(e1v2)*y,float(e2v1)*x + float(e2v2)*y], [x, y])
     print(sistema)
-    vector2 = np.array([[0], [0]])
-    sol = np.linalg.solve(sistema, vector2)
-    print(sol)
+    
+    if len(sistema) < 2:
+        return False
+    else:
+        valorX = sistema[x]
+        valorY = sistema[y]
+    
+        if (int(valorX) == int(valorY) == 0):
+            return True
+        else:
+            return False
+
 
 def esBaseR3(v):
     x = Symbol('x')
@@ -65,21 +98,21 @@ def esBaseR3(v):
     e2v3 = v[2][1]
     e3v3 = v[2][2]
     
-    res = solve([e1v1*x + e1v2*y + e1v3*z, e2v1*x + e2v2*y + e2v3*z, e3v1*x + e3v2*y + e3v3*z], [x, y, z])
-    print(res)
-    print(res[x])
+    sistema = solve([float(e1v1)*x + float(e1v2)*y + float(e1v3)*z, float(e2v1)*x + float(e2v2)*y + float(e2v3)*z, float(e3v1)*x + float(e3v2)*y + float(e3v3)*z], [x, y, z])   
+    print(sistema)
     
+    if len(sistema) < 3:
+        return False
+    else:
+        valorX = sistema[x]
+        valorY = sistema[y]
+        valorZ = sistema[z]
     
-  #  print(v)
-  #  sistema = np.array([[e1v1, e1v2, e1v3], [e2v1, e2v2, e2v3],[e3v1, e3v2, e3v3]])
-  #  print("determinante: " ,np.linalg.det(sistema))
-  #  print(sistema)
-    
-   # vector2 = np.array([[0], [0], [0]])
-   # sol = np.linalg.solve(sistema, vector2)
-   # print(sol)
-    
-    
+        if (int(valorX) == int(valorY) == int(valorZ) == 0):
+            return True
+        else:
+            return False
+ ##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""   
     
 
 #-------------------------------------------------------------------------------
@@ -150,28 +183,28 @@ def gsn(vL):
 #esBaseR2(test_0)
 
 
-test_1 = np.array([[1, 1, 0], [0,2,3], [1, 2,3]])
-test_2 = np.array([[1,1,3], [3,5,5], [2,1,8]])
-test_3 = np.array([[2,3,1], [1,0,1], [0,3,-1]])
-test_4 = np.array([[1,-2,3], [2,-2,0], [0,1,7]])
-
-
-test_5 = np.array([[2,0,0], [0,1,0], [0,0,1]])
-test_6 = np.array([[1,1,1], [1,1,0], [1,0,0]])
-test_7 = np.array([[504,0,0], [0,7,0], [0,0,1.5]])
-
-test_8 = np.array([[-1,0,2], [0,-4,2], [2,0,-4]])
-
-esBaseR3(test_1)
-esBaseR3(test_2)
-esBaseR3(test_3)
-esBaseR3(test_4)
-
-esBaseR3(test_5)
-esBaseR3(test_6)
-esBaseR3(test_7)
-
-esBaseR3(test_8)
+#test_1 = np.array([[1, 1, 0], [0,2,3], [1, 2,3]])
+#test_2 = np.array([[1,1,3], [3,5,5], [2,1,8]])
+#test_3 = np.array([[2,3,1], [1,0,1], [0,3,-1]])
+#test_4 = np.array([[1,-2,3], [2,-2,0], [0,1,7]])
+#
+#
+#test_5 = np.array([[2,0,0], [0,1,0], [0,0,1]])
+#test_6 = np.array([[1,1,1], [1,1,0], [1,0,0]])
+#test_7 = np.array([[504,0,0], [0,7,0], [0,0,1.5]])
+#
+#test_8 = np.array([[-1,0,2], [0,-4,2], [2,0,-4]])
+#
+#esBaseR3(test_1)
+#esBaseR3(test_2)
+#esBaseR3(test_3)
+#esBaseR3(test_4)
+#
+#esBaseR3(test_5)
+#esBaseR3(test_6)
+#esBaseR3(test_7)
+#
+#esBaseR3(test_8)
 #
 ##Se define los valores de la matriz A
 #A = array([[1,2,3],[1,2,3],[1,2,3]])

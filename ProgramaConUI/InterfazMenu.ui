@@ -688,6 +688,32 @@
        </widget>
       </widget>
      </widget>
+     <widget class="QPushButton" name="pushButtonCalcularR2P2">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>280</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calcular</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonCalcularR3P2">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>500</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calcular</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
