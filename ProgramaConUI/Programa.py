@@ -201,8 +201,9 @@ def respuestaTransP1(A):
     return respuesta
 
 def combinacionLineal(MTA, MTB, U):
-    print(mTransicionA.dot(U))
-    print(mTransicionB.dot(U))
+    print(MTA.dot(U))
+
+    print(MTB.dot(U))
     
 ##"""""""""""""""""""""""FIN Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
