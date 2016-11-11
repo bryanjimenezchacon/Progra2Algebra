@@ -65,13 +65,19 @@ class Principal(QtGui.QMainWindow, form_class):
             print("soy base")
             mTransicionA = transicion(baseA, baseB)
             mTransicionB = transicion(baseB, baseA)
+            print("Matrices de transicion")
             print(mTransicionA)
             print(mTransicionB)
+            print("Bases como matrices")
+            print(baseA)
+            print(baseB)
             self.labelTransisiones.setText(respuestaTransP1(mTransicionA))
             self.labelTransisiones2.setText(respuestaTransP1(mTransicionB))
-            
+            print("Combinacion lineal")
             combinacionLineal(mTransicionA, mTransicionB, U)
-            
+            print("Bases * Vector")
+            print(baseA.dot(U))
+            print(baseB.dot(U))
             
         else:
             self.labelTransisiones.setText("No son Base, hay dependencia :(")
@@ -202,8 +208,8 @@ def respuestaTransP1(A):
 
 def combinacionLineal(MTA, MTB, U):
     print(MTA.dot(U))
-
     print(MTB.dot(U))
+    
     
 ##"""""""""""""""""""""""FIN Programa 1"""""""""""""""""""""""""""""""""""""""
 #-------------------------------------------------------------------------------
