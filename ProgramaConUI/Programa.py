@@ -7,8 +7,6 @@ from scipy import *
 from sympy import *
 import sys
 from PyQt4 import QtCore, QtGui, uic
-from itertools import *
-import copy
 
 #import InterfazMenu
 # Cargar nuestro archivo .ui
@@ -101,17 +99,18 @@ class Principal(QtGui.QMainWindow, form_class):
       v1 = vector1R2.split(",")
       v2 = vector2R2.split(",")
       vectores = np.array([v1, v2])
+ 
+      #try:
+      if (esBaseR2(vectores)):
+          print("soy base")
+          vectoresFloatR2 = vectores.astype(np.float)
+          print(gs(vectoresFloatR2))
+          self.labelR2Ortonormal.setText(respuestaP2(gs(vectoresFloatR2)))
+      else:
+          self.labelR2Ortonormal.setText("No es Base, hay dependencia :(")
+          print("Nope, no base here")
   except:
-    self.labelR2Ortonormal.setText("Todos los valores deben ser numéricos :(")  
-  #try:
-  if (esBaseR2(vectores)):
-      print("soy base")
-      vectoresFloatR2 = vectores.astype(np.float)
-      print(gs(vectoresFloatR2))
-      self.labelR2Ortonormal.setText(respuestaP2(gs(vectoresFloatR2)))
-  else:
-      self.labelR2Ortonormal.setText("No es Base, hay dependencia :(")
-      print("Nope, no base here")
+    self.labelR2Ortonormal.setText("Todos los valores deben ser numéricos :/")       
   #except:
    #   self.labelR2Ortonormal.setText("Los valores deben ser numéricos :/")  
 
@@ -126,9 +125,8 @@ class Principal(QtGui.QMainWindow, form_class):
       v2 = vector2R3.split(",")
       v3 = vector3R3.split(",")
       vectores = np.array([v1, v2, v3])
-  except:
-    self.labelR3Ortonormal.setText("Todos los valores deben ser numéricos :(") 
-  try:
+
+      #try:
       if (esBaseR3(vectores)):
           print("soy base")
           vectoresFloatR3 = vectores.astype(np.float)
@@ -138,7 +136,9 @@ class Principal(QtGui.QMainWindow, form_class):
           self.labelR3Ortonormal.setText("No es Base, hay dependencia :(")
           print("Nope, no base here")
   except:
-      self.labelR3Ortonormal.setText("Los valores deben ser numéricos :/")
+    self.labelR3Ortonormal.setText("Todos los valores deben ser numéricos :/") 
+  #except:
+  #    self.labelR3Ortonormal.setText("Los valores deben ser numéricos :/")
 
 ##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ##""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

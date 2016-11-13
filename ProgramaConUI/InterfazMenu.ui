@@ -62,9 +62,9 @@
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>370</x>
         <y>150</y>
-        <width>661</width>
+        <width>641</width>
         <height>81</height>
        </rect>
       </property>
@@ -85,7 +85,7 @@
      <widget class="QLabel" name="label_19">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>270</x>
         <y>250</y>
         <width>661</width>
         <height>81</height>
@@ -108,7 +108,7 @@
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>250</x>
         <y>320</y>
         <width>661</width>
         <height>81</height>
@@ -131,7 +131,7 @@
      <widget class="QLabel" name="label_21">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>210</x>
         <y>390</y>
         <width>661</width>
         <height>81</height>
@@ -184,7 +184,7 @@
        <rect>
         <x>50</x>
         <y>90</y>
-        <width>541</width>
+        <width>611</width>
         <height>31</height>
        </rect>
       </property>
@@ -316,8 +316,8 @@
        <rect>
         <x>220</x>
         <y>140</y>
-        <width>331</width>
-        <height>91</height>
+        <width>441</width>
+        <height>111</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -417,7 +417,7 @@
        <rect>
         <x>50</x>
         <y>260</y>
-        <width>371</width>
+        <width>581</width>
         <height>31</height>
        </rect>
       </property>
@@ -435,8 +435,8 @@
        <rect>
         <x>220</x>
         <y>290</y>
-        <width>321</width>
-        <height>61</height>
+        <width>441</width>
+        <height>81</height>
        </rect>
       </property>
       <property name="alternatingRowColors">
@@ -506,7 +506,7 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>390</y>
+        <y>410</y>
         <width>971</width>
         <height>191</height>
        </rect>
@@ -620,7 +620,7 @@
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>360</y>
+        <y>380</y>
         <width>181</width>
         <height>23</height>
        </rect>
@@ -662,8 +662,8 @@
        <rect>
         <x>210</x>
         <y>170</y>
-        <width>271</width>
-        <height>51</height>
+        <width>341</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="alternatingRowColors">
@@ -719,7 +719,7 @@
        <rect>
         <x>60</x>
         <y>100</y>
-        <width>371</width>
+        <width>581</width>
         <height>31</height>
        </rect>
       </property>
@@ -737,8 +737,8 @@
        <rect>
         <x>160</x>
         <y>390</y>
-        <width>371</width>
-        <height>51</height>
+        <width>481</width>
+        <height>81</height>
        </rect>
       </property>
       <property name="alternatingRowColors">
@@ -794,7 +794,7 @@
        <rect>
         <x>60</x>
         <y>340</y>
-        <width>371</width>
+        <width>581</width>
         <height>31</height>
        </rect>
       </property>
