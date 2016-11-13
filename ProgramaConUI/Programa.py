@@ -74,16 +74,19 @@ class Principal(QtGui.QMainWindow, form_class):
             self.labelTransisiones.setText(respuestaTransP1(mTransicionA))
             self.labelTransisiones2.setText(respuestaTransP1(mTransicionB))
             print("Combinacion lineal")
+            ##Combinacion lineal
+            self.labelCombinaciones2.setText(respuestaComb(mTransicionA.dot(U), baseB))
+            self.labelCombinaciones.setText(respuestaComb(mTransicionB.dot(mTransicionA.dot(U)), baseA))
             combinacionLineal(mTransicionA, mTransicionB, U)
-            print("Bases * Vector")
-            print(baseA.dot(U))
-            print(baseB.dot(U))
+
             
         else:
             self.labelTransisiones.setText("No son Base, hay dependencia :(")
+            self.labelTransisiones.setText("")
             print("Nope, no base here")
     except:
         self.labelTransisiones.setText("Los valores deben ser numéricos :/") 
+        self.labelTransisiones2.setText("") 
      
  def calcOrtonormalR2(self):#Para el programa 2
  #Obtiene los vectores
@@ -205,10 +208,28 @@ def respuestaTransP1(A):
         respuesta += "\n"
 
     return respuesta
-
+    
+def respuestaComb(A, base):
+    respuesta = ""
+    for i in range(len(A)):
+        respuesta += str(A[i][0])
+        respuesta += "("
+        for j in range(len(base[i])):
+            
+            respuesta += str(base[i][j])
+            if (j != (len(base[i])-1)):  
+                respuesta += ","
+                
+        respuesta += ")"
+        respuesta += "   "
+        
+    return respuesta
+    
+    
+    
 def combinacionLineal(MTA, MTB, U):
     print(MTA.dot(U))
-    print(MTB.dot(U))
+    print(MTB.dot(MTA.dot(U)))
     
     
 ##"""""""""""""""""""""""FIN Programa 1"""""""""""""""""""""""""""""""""""""""
