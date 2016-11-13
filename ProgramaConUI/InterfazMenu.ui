@@ -729,7 +729,7 @@
        </font>
       </property>
       <property name="text">
-       <string>1.Ingrese la base de R2   Ej:  (2, 3,1)  (1, 2, 4)</string>
+       <string>1.Ingrese la base de R2   Ej:  (2, 3, 1)  (1, 2, 4)</string>
       </property>
      </widget>
      <widget class="QTableWidget" name="tableWidgetBaseR3P2">
