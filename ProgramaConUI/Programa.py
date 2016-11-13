@@ -28,38 +28,42 @@ class Principal(QtGui.QMainWindow, form_class):
   self.pushButtonCalcularR3P2.clicked.connect(self.calcOrtonormalR3)
   
  def calcTransicion(self):#Paraq programa 1
-    vectorA1R3 = self.tableWidgetBasesP1.item(0,0).text()
-    vectorA2R3 = self.tableWidgetBasesP1.item(0,1).text()
-    vectorA3R3 = self.tableWidgetBasesP1.item(0,2).text()
-   
-    vectorB1R3 = self.tableWidgetBasesP1.item(1,0).text()
-    vectorB2R3 = self.tableWidgetBasesP1.item(1,1).text()
-    vectorB3R3 = self.tableWidgetBasesP1.item(1,2).text()
+    try:
+        vectorA1R3 = self.tableWidgetBasesP1.item(0,0).text()
+        vectorA2R3 = self.tableWidgetBasesP1.item(0,1).text()
+        vectorA3R3 = self.tableWidgetBasesP1.item(0,2).text()
+       
+        vectorB1R3 = self.tableWidgetBasesP1.item(1,0).text()
+        vectorB2R3 = self.tableWidgetBasesP1.item(1,1).text()
+        vectorB3R3 = self.tableWidgetBasesP1.item(1,2).text()
+        
+        E1U = self.tableWidgetVectorP1.item(0,0).text()
+        E2U = self.tableWidgetVectorP1.item(0,1).text()
+        E3U = self.tableWidgetVectorP1.item(0,2).text()
+        
+        vA1 = vectorA1R3.split(",")
+        vA2 = vectorA2R3.split(",")
+        vA3 = vectorA3R3.split(",")
+        
+        vB1 = vectorB1R3.split(",")
+        vB2 = vectorB2R3.split(",")
+        vB3 = vectorB3R3.split(",")
+        
+        vU1 = E1U.split(",")
+        vU2 = E2U.split(",")
+        vU3 = E3U.split(",")    
     
-    E1U = self.tableWidgetVectorP1.item(0,0).text()
-    E2U = self.tableWidgetVectorP1.item(0,1).text()
-    E3U = self.tableWidgetVectorP1.item(0,2).text()
-    
-    vA1 = vectorA1R3.split(",")
-    vA2 = vectorA2R3.split(",")
-    vA3 = vectorA3R3.split(",")
-    
-    vB1 = vectorB1R3.split(",")
-    vB2 = vectorB2R3.split(",")
-    vB3 = vectorB3R3.split(",")
-    
-    vU1 = E1U.split(",")
-    vU2 = E2U.split(",")
-    vU3 = E3U.split(",")    
-    
-    baseATemp = np.array([vA1, vA2, vA3])
-    baseBTemp = np.array([vB1, vB2, vB3])
-    vectorU = np.array([vU1, vU2, vU3])
-    
-    baseA = baseATemp.astype(np.float)
-    baseB = baseBTemp.astype(np.float)
-    U = vectorU.astype(np.float)
-   
+        baseATemp = np.array([vA1, vA2, vA3])
+        baseBTemp = np.array([vB1, vB2, vB3])
+        vectorU = np.array([vU1, vU2, vU3])
+        
+        baseA = baseATemp.astype(np.float)
+        baseB = baseBTemp.astype(np.float)
+        U = vectorU.astype(np.float)
+    except:
+        self.labelTransisiones.setText("Todos los valores deben ser numéricos :(") 
+        self.labelTransisiones2.setText("")  
+        
     try:
         if (esBaseR3(baseA) and esBaseR3(baseB)):
             print("soy base")
@@ -90,12 +94,15 @@ class Principal(QtGui.QMainWindow, form_class):
      
  def calcOrtonormalR2(self):#Para el programa 2
  #Obtiene los vectores
-  vector1R2 = self.tableWidgetBaseR2P2.item(0,0).text()
-  vector2R2 = self.tableWidgetBaseR2P2.item(0,1).text()
-  
-  v1 = vector1R2.split(",")
-  v2 = vector2R2.split(",")
-  vectores = np.array([v1, v2])
+  try:
+      vector1R2 = self.tableWidgetBaseR2P2.item(0,0).text()
+      vector2R2 = self.tableWidgetBaseR2P2.item(0,1).text()
+      
+      v1 = vector1R2.split(",")
+      v2 = vector2R2.split(",")
+      vectores = np.array([v1, v2])
+  except:
+    self.labelR2Ortonormal.setText("Todos los valores deben ser numéricos :(")  
   #try:
   if (esBaseR2(vectores)):
       print("soy base")
@@ -110,14 +117,17 @@ class Principal(QtGui.QMainWindow, form_class):
 
  def calcOrtonormalR3(self):#Para el programa 2
  #Obtiene los vectores
-  vector1R3 = self.tableWidgetBaseR3P2.item(0,0).text()
-  vector2R3 = self.tableWidgetBaseR3P2.item(0,1).text()
-  vector3R3 = self.tableWidgetBaseR3P2.item(0,2).text()
-  
-  v1 = vector1R3.split(",")
-  v2 = vector2R3.split(",")
-  v3 = vector3R3.split(",")
-  vectores = np.array([v1, v2, v3])
+  try:
+      vector1R3 = self.tableWidgetBaseR3P2.item(0,0).text()
+      vector2R3 = self.tableWidgetBaseR3P2.item(0,1).text()
+      vector3R3 = self.tableWidgetBaseR3P2.item(0,2).text()
+      
+      v1 = vector1R3.split(",")
+      v2 = vector2R3.split(",")
+      v3 = vector3R3.split(",")
+      vectores = np.array([v1, v2, v3])
+  except:
+    self.labelR3Ortonormal.setText("Todos los valores deben ser numéricos :(") 
   try:
       if (esBaseR3(vectores)):
           print("soy base")
@@ -200,7 +210,7 @@ def transicion(A, B):
     AT = A.T 
     resultado = BInversa.dot(AT)
     return resultado
-    
+#-------------------------------------------------------------------------------    
 def respuestaTransP1(A):
     respuesta = ""
     for i in range(len(A)):
@@ -208,7 +218,7 @@ def respuestaTransP1(A):
         respuesta += "\n"
 
     return respuesta
-    
+#-------------------------------------------------------------------------------    
 def respuestaComb(A, base):
     respuesta = ""
     for i in range(len(A)):
@@ -224,9 +234,7 @@ def respuestaComb(A, base):
         respuesta += "   "
         
     return respuesta
-    
-    
-    
+#-------------------------------------------------------------------------------       
 def combinacionLineal(MTA, MTB, U):
     print(MTA.dot(U))
     print(MTB.dot(MTA.dot(U)))
@@ -262,7 +270,7 @@ def respuestaP2(sol):
         for j in range(len(sol[i])):
             respuesta += str(sol[i][j])
             if (j != (len(sol[i])-1)):
-                respuesta += ", "
+                respuesta += ",  "
             print(sol[i][j])
         if(i != (len(sol)-1)):
             respuesta += "), "
